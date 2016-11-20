@@ -15,8 +15,8 @@
   <div class="source_media"></div>
   <div class="content"></div>
 </div>
-
-<h8>Powered by<a href="https://newsapi.org/"> News Api</a></h8>
+<div id="loading">Loading...</div>
+<h8></h8>
 
 <script>
 $( document ).ready(function() {
@@ -31,6 +31,7 @@ $( document ).ready(function() {
     dataType:'json',
     success : function(response){
       console.log(response);
+      $("#loading").css({"display":"none"});
 
       // $('.content').append('<div class="news_content_container"></div>')
       response.articles.forEach(function(elem){
@@ -41,6 +42,7 @@ $( document ).ready(function() {
         + '</div></div>'+'</a>');
       })
       $('.source_media').append('<div class='+response.source+'>'+response.source.toUpperCase()+'<div>');
+      $('h8').append('Powered by'+'<a href="https://newsapi.org/">'+ 'News Api'+'</a>');
     },
     error : function(data) {
       console.log("error")
