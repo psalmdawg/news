@@ -1,0 +1,84 @@
+                                  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery.js"></script>
+  <script src="handlebars.js"></script>
+  <title>News</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="source_media"></div>
+  <div class="content"></div>
+</div>
+
+
+
+ <script id="entry-template" type="text/x-handlebars-template">
+ <h1>{{ this.author }} </h1>
+ {{#each articles}}
+
+  <a href="{{this.url}}">
+    <div class="news_content_container">
+      <div class="img_cntr">
+           <img src="{{this.urlToImage}}"alt=""/>
+      </div>
+      <div class="news_section">
+           <div class="news_title">
+                 {{this.title}}
+           </div>
+           <div class="news_description">
+                {{this.description}}
+           </div>
+      </div>
+  </div>
+</a>
+ {{/each}}
+ </script>
+
+
+<script>
+
+
+var newsMethod = {
+    handlerData:function(resJSON){
+        var templateSource  = $("#entry-template").html();
+        var template = Handlebars.compile(templateSource);
+        var context = template(resJSON);
+  
+        $('.content').html(context);
+      },
+      loadNewsData : function(){
+
+
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'bbc-news',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+
+
+     }); //ajax
+   }
+};
+
+
+$(document).ready(function(){
+
+    newsMethod.loadNewsData();
+});
+
+</script>
+
+<a href=" http://www.tutorialsavvy.com/2013/10/using-handlebar-template-for-json-response.html/">thank these guys</a>
+
+</body>
+</html>

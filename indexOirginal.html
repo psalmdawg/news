@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery.js"></script>
+  <script src="handlebars.js"></script>
+  <script src="tabSelector.js"></script>
+  <title>News</title>
+</head>
+<body>
+  <ul class="nav nav-tabs nav-justified">
+    <li><a href="#" onClick="openTab('news')">News</a></li>
+    <li><a href="#" onClick="openTab('business')">Business</a></li>
+    <li><a href="#" onClick="openTab('sport')">Sport</a></li>
+    <li><a href="#" onClick="openTab('entertainment')">Entertainment</a></li>
+    <li><a href="#" onClick="openTab('travel')">Travel</a></li>
+    <li><a href="#" onClick="openTab('tech')">Technology</a></li>
+    <li><a href="#" onClick="openTab('science')">Science</a></li>
+  </ul>
+<div class="container">
+
+<div id="news" class="infoSection"></div>
+  <div class="content"></div>
+</div>
+<div id="business" class="infoSection">business</div>
+</div>
+<div id="sport" class="infoSection">sport</div>
+</div>
+<div id="travel" class="infoSection"></div>
+</div>
+<div id="tech" class="infoSection"></div>
+</div>
+<div id="science" class="infoSection"></div>
+</div>
+
+<div id="loading">Loading...</div>
+
+
+<script>
+$( document ).ready(function() {
+
+
+
+  $.ajax({
+    url:"https://newsapi.org/v1/articles",
+    type: "GET",
+    data: {
+      'source':'bbc-news',
+      'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+    },
+    dataType:'json',
+    success : function(response){
+      console.log(response);
+      $("#loading").css({"display":"none"});
+
+      response.articles.forEach(function(elem){
+        $('.content').append('<a href="'+ elem.url+ '">'+'<div class="news_content_container">'
+        + '<div class="img_cntr">'+'<img src="' + elem.urlToImage + '"alt=""/></div>'
+        + '<div class="news_section"><div class="news_title">' + elem.title
+        + '</div>' + '<div class="news_description">' + elem.description + '</div>'
+        + '</div>' + '<div class="source_media"></div></div>'+ '</a>');
+      })
+      $('.source_media').append('<div class='+response.source+'>'+response.articles[1].author+'<div>');
+      $('h8').append('Powered by'+'<a href="https://newsapi.org/">'+ 'News Api'+'</a>');
+    },
+    error : function(data) {
+      console.log("error")
+    }
+  });
+
+  $('.nav li').click(function(){
+      console.log('clicked');
+      $('.nav li').removeClass('active');
+      $(this).addClass('active');
+    });
+
+});
+
+</script>
+
+</body>
+</html>
