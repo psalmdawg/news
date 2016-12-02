@@ -17,6 +17,9 @@ img{
 .nav a:hover{
   color: grey;
 }
+.nav{
+  margin-bottom: 40px;
+}
 /* all section*/
 .imgWrap {
   position: relative;
