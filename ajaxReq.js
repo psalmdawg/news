@@ -6,7 +6,7 @@ var count = 0;
 // console.log(articlesArray)
 function displayArticles(){
   console.log(count)
-  if(count === 16){
+  if(count === 17){
     console.log(articlesArray)
     shuffle(articlesArray)
     imgFilter(articlesArray)
@@ -614,8 +614,9 @@ $( document ).ready(function() {
 
 
 function imgFilter(array){
+  console.log("filtering")
   console.log(array.length)
-  // var array2 = [];
+  
   array.forEach(function(element){
     if(element.urlToImage != ""){
       if(element.urlToImage != null){
@@ -623,26 +624,20 @@ function imgFilter(array){
       }
     }
   });
-  console.log("array2: " )
-  console.log( array2)
-  console.log(array2.length)
+  // console.log("array2: " )
+  // console.log( array2)
+  // console.log(array2.length)
 
-  // return array2;
 }
 
 function shuffle(array) {
-
-  console.log("shuffler")
+  console.log("shuffling")
   var m = array.length, t, i;
-  // While there remain elements to shuffle…
   while (m) {
-    // Pick a remaining element…
     i = Math.floor(Math.random() * m--);
-    // And swap it with the current element.
     t = array[m];
     array[m] = array[i];
     array[i] = t;
   }
-  // console.log(array)
   return array;
 }

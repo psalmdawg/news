@@ -35,14 +35,15 @@ img{
   /*float: left;
 
   clear: both;*/
-  margin-left: -1%;
-  margin-top: -1%;
+  margin-left: -1.5%;
+  margin-top: -1.5%;
   overflow: hidden;
   width: 33%;
   transition: .2s ease-in-out;
 }
 .imgWrap img{
   width: 100%;
+  max-height: 350px;
 }
 
 .imgDescription {
