@@ -141,8 +141,9 @@ a:hover{
 @media (max-width: 600px) {
   *{
     margin:0;
-
   }
+
+
   .container{
     min-width: 100%;
   }
@@ -172,7 +173,25 @@ a:hover{
     /*margin-top: 0;*/
     /*vertical-align: top;*/
   }
+  .allContent{
+    /*margin-top: 20%;*/
+  }
+  .nav li{
+    display: none;
+  }
+
+  ul{
+    margin-bottom:20px;
+  }
+  /*.nav a{
+    margin-bottom: 2%;
+  }*/
   .imgWrap{
     width: 100%;
+    margin-top: 0;
+  }
+  .imgDescription {
+    opacity: .8;
+    visibility: visible;
   }
 }
