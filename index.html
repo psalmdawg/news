@@ -84,9 +84,29 @@
     <div class="imgWrap">
       <img src="{{urlToImage}}" alt="{{title}}"/>
       <p class="imgDescription">{{title}}</p>
+      <div class="title_mobile">{{title}}</div>
     </div>
   </a>
   {{/each}}
+</script>
+
+<script>
+$( document ).ready(function(){
+  $('.imgWrap').hover(
+      function(){
+          $(this).find('p').stop(true, true).animate({
+              'bottom': '+=100'
+          }, 100);
+      },
+      function(){
+          $(this).find('p').stop(true, true).animate({
+              'bottom': '-=100'
+          }, 100);
+      }
+  );
+})
+
+
 </script>
 
 
