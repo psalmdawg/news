@@ -48,16 +48,17 @@ img{
 
 .imgDescription {
   position: absolute;
-  font-size: 25px;
+  font-size: 1.5em;
   padding-top: 8%;
   padding-left: 10%;
   padding-right: 10%;
-  text-align: center;;
+  text-align: center;
+  font-weight: bold;
   width: 100%;
   height: 100%;
   bottom: 0;
   margin: 0 auto;
-  background: rgba(77,77,77,0.7);
+  background: rgba(77,77,77,0.8);
   color: #fff;
   visibility: hidden;
   opacity: 0;
@@ -69,7 +70,7 @@ img{
   opacity: 1;
 }
 .imgWrap:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
   border: white 3px solid;
   z-index: 50;
 }
