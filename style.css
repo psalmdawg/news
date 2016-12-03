@@ -126,6 +126,13 @@ a:hover{
   margin-left:1%;
   vertical-align: top;
 }
+
+#newsApiPraise{
+  color: white;
+}
+#newsApiPraise a{
+  color: white;
+}
 @media (max-width: 900px) {
   .container{
     min-width: 80%;

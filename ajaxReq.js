@@ -6,7 +6,7 @@ var count = 0;
 // console.log(articlesArray)
 function displayArticles(){
   console.log(count)
-  if(count === 13){
+  if(count === 16){
     console.log(articlesArray)
     shuffle(articlesArray)
     imgFilter(articlesArray)
@@ -456,6 +456,146 @@ $( document ).ready(function() {
   }
 
 
+  var telegraphMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'the-telegraph',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var timesIndiaMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'the-times-of-india',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var guardianUkMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'the-guardian-uk',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var economistMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'the-economist',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  economistMethod.loadNewsData();
+  guardianUkMethod.loadNewsData();
+  timesIndiaMethod.loadNewsData()
+  telegraphMethod.loadNewsData()
   ladBibleMethod.loadNewsData();
   huffingtonMethod.loadNewsData();
   reutersMethod.loadNewsData();
