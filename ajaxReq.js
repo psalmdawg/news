@@ -2,10 +2,11 @@
 var articlesArray = [];
 var array2 = [];
 var count = 0;
+
 // console.log(articlesArray)
 function displayArticles(){
-
-  if(count === 7){
+  console.log(count)
+  if(count === 13){
     console.log(articlesArray)
     shuffle(articlesArray)
     imgFilter(articlesArray)
@@ -245,6 +246,222 @@ $( document ).ready(function() {
      }); //ajax
     }
   }
+
+
+
+
+
+  var cnnMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'cnn',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var polygonMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'polygon',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var reutersMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'reuters',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var skyNewsMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'polygon',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var huffingtonMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'the-huffington-post',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+  var ladBibleMethod = {
+    handlerData:function(resJSON){
+      count ++;
+      displayArticles()
+      // articlesArray.push(resJSON)
+      var data = resJSON.articles
+      for (var key in resJSON.articles) {
+          var obj = resJSON.articles[key];
+          articlesArray.push(obj)
+      }
+
+      // articlesArray.forEach(function(x){
+      //   console.log(x)
+      // })
+      // console.log(articlesArray.length)
+      // var templateSource  = $("#entry-template").html();
+      // var template = Handlebars.compile(templateSource);
+      // var context = template(resJSON);
+      // $('.scienceContent').html(context);
+    },
+      loadNewsData : function(){
+      $.ajax({
+        url:"https://newsapi.org/v1/articles",
+        type: "GET",
+        data: {
+          'source':'the-lad-bible',
+          'apiKey':'5952789a3b18436ab600d8fc59f7b985'
+        },
+        dataType:'json',
+        success : this.handlerData,
+     }); //ajax
+    }
+  }
+
+
+  ladBibleMethod.loadNewsData();
+  huffingtonMethod.loadNewsData();
+  reutersMethod.loadNewsData();
+  skyNewsMethod.loadNewsData();
+  cnnMethod.loadNewsData();
+  polygonMethod.loadNewsData();
   scienceMethod.loadNewsData();
   techMethod.loadNewsData();
   travelMethod.loadNewsData();
@@ -266,7 +483,8 @@ function imgFilter(array){
       }
     }
   });
-  console.log(array2)
+  console.log("array2: " )
+  console.log( array2)
   console.log(array2.length)
 
   // return array2;
@@ -285,6 +503,6 @@ function shuffle(array) {
     array[m] = array[i];
     array[i] = t;
   }
-  console.log(array)
+  // console.log(array)
   return array;
 }
