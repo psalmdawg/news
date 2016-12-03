@@ -20,14 +20,14 @@ img{
 }
 .nav{
   /*margin-bottom: 40px;*/
-  background: white;
+  /*background: white;*/
   height: 40px;
   margin-top:0;
   /*opacity: .5;*/
 }
 
 .nav span{
-  color: black;
+  color: white;
   float: right;
   margin-right: 5%;
   margin-top:12px;
@@ -81,7 +81,7 @@ img{
 /*all section end*/
 
 .container{
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
   margin-top: 20px;
   clear: right;
