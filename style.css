@@ -170,11 +170,13 @@ body{
 .nav-slide{
   margin-left: 0px;
   transition: 0.4s;
+  height: 100vh;
 }
 .nav span{
   position: absolute;
   bottom: 0;
   margin:10px;
+  color: white;
 }
 ul {
   margin: 0;
@@ -275,6 +277,12 @@ ul {
     margin:0;
   }
 
+  .trigger{
+    width: 30px;
+    height: 30px;
+    margin: 10px 20px;
+  }
+
   .container{
     min-width: 100%;
     margin:0;
@@ -337,5 +345,13 @@ ul {
     padding: 2% 1.5%;
     text-align: left;
     background: rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-ul li{
+    height:55px;
+    line-height:55px;
+  }
+  .nav-ul{
+    height: 100vh;
   }
 }
