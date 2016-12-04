@@ -9,50 +9,80 @@
   <script src="handlebars.js"></script>
   <script src="tabSelector.js"></script>
   <script src="ajaxReq.js"></script>
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+
   <title>News</title>
 </head>
 <body>
 
-  <ul class="nav">
-    <!-- <li class="active"><a href="#" onClick="openTab('all')">Everything!</a></li>
-    <li><a href="#" onClick="openTab('news')">News</a></li>
-    <li><a href="#" onClick="openTab('business')">Business</a></li>
-    <li><a href="#" onClick="openTab('sport')">Sport</a></li>
-    <li><a href="#" onClick="openTab('entertainment')">Entertainment</a></li>
-    <li><a href="#" onClick="openTab('nature')">Nature</a></li>
-    <li><a href="#" onClick="openTab('tech')">Technology</a></li>
-    <li><a href="#" onClick="openTab('science')">Science</a></li> -->
-    <span>International News Digester</span>
-  </ul>
 
-  <div class="container">
-    <div id="all" class="infoSection">
-      <div class="allContent">If items don't have an image, then dont display it</div>
-    </div>
-    <div id="news" class="infoSection">
-      <div class="content"></div>
-    </div>
-    <div id="business" class="infoSection">
-      <div class="busContent"></div>
-    </div>
-    <div id="sport" class="infoSection">
-      <div class="sportContent"></div>
-    </div>
-    <div id="entertainment" class="infoSection">
-      <div class="entContent"></div>
-    </div>
-    <div id="nature" class="infoSection">
-      <div class="travContent"></div>
-    </div>
 
-    <div id="tech" class="infoSection">
-      <div class="techContent"></div>
+  <div class="nav">
+    <div class="nav-title">
+      The International News Digester
     </div>
-    <div id="science" class="infoSection">
-      <div class="scienceContent"></div>
+    <ul class="nav-ul">
+      <li class="first">News</li>
+      <li>Business</li>
+      <li>World</li>
+      <li>Tech</li>
+      <li>Entertainment</li>
+      <li>Science</li>
+      <li>Arts</li>
+      <li>About</li>
+    </ul>
+    <span>Copyright 2016</span>
+  </div>
+
+  <div class="main">
+    <div class="nav-tools">
+
+      <div class="trigger"></div>
+      <!-- <div class="test-square"></div> -->
+
     </div>
-    <h3 id="newsApiPraise"><a href="https://newsapi.org/">Powered by NewsApi</a></h3>
+    <ul class="second-nav">
+      <!-- <li class="active"><a href="#" onClick="openTab('all')">Everything!</a></li>
+      <li><a href="#" onClick="openTab('news')">News</a></li>
+      <li><a href="#" onClick="openTab('business')">Business</a></li>
+      <li><a href="#" onClick="openTab('sport')">Sport</a></li>
+      <li><a href="#" onClick="openTab('entertainment')">Entertainment</a></li>
+      <li><a href="#" onClick="openTab('nature')">Nature</a></li>
+      <li><a href="#" onClick="openTab('tech')">Technology</a></li>
+      <li><a href="#" onClick="openTab('science')">Science</a></li> -->
+      <span>International News Digester</span>
+    </ul>
+    <div class="sub-main">
+
+      <div class="container">
+        <div id="all" class="infoSection">
+          <div class="allContent">Loading...</div>
+        </div>
+        <div id="news" class="infoSection">
+          <div class="content"></div>
+        </div>
+        <div id="business" class="infoSection">
+          <div class="busContent"></div>
+        </div>
+        <div id="sport" class="infoSection">
+          <div class="sportContent"></div>
+        </div>
+        <div id="entertainment" class="infoSection">
+          <div class="entContent"></div>
+        </div>
+        <div id="nature" class="infoSection">
+          <div class="travContent"></div>
+        </div>
+
+        <div id="tech" class="infoSection">
+          <div class="techContent"></div>
+        </div>
+        <div id="science" class="infoSection">
+          <div class="scienceContent"></div>
+        </div>
+        <h3 id="newsApiPraise"><a href="https://newsapi.org/">Powered by NewsApi</a></h3>
+      </div><!-- container -->
+
+    </div><!-- sub main -->
   </div>
 
 <script id="entry-template" type="text/x-handlebars-template">
@@ -92,18 +122,15 @@
 
 <script>
 $( document ).ready(function(){
-  $('.imgWrap').hover(
-      function(){
-          $(this).find('p').stop(true, true).animate({
-              'bottom': '+=100'
-          }, 100);
-      },
-      function(){
-          $(this).find('p').stop(true, true).animate({
-              'bottom': '-=100'
-          }, 100);
-      }
-  );
+  $('.trigger').click(function(){
+    $('.main').toggleClass('changer')
+    $('.nav').toggleClass('nav-slide')
+  })
+
+  $('.nav-ul').click(function(){
+    $('.main').removeClass('changer')
+    $('.nav').removeClass('nav-slide')
+  })
 })
 
 
